@@ -1,0 +1,25 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "Type in a burger name and show it as to be devoured and once you do it will move over to show it was eaten",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciarram/Burger.git"
+  },
+  "author": "Ciarra Murphy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ciarram/Burger/issues"
+  },
+  "homepage": "https://github.com/ciarram/Burger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "express-handlebars": "^3.0.0"
+  }
+}
