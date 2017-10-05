@@ -6,7 +6,7 @@ console.log(burgerInfo);
 
 
 module.exports = function(app){
-    app.get("/api/burger", function(req, res){
+    app.get("/api/new", function(req, res){
         res.json(possibleCharacter);
         console.log("I'm in get");
     })

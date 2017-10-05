@@ -19,6 +19,7 @@
         }
 
         </style>
+<script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 </head>
     <body>
         <h3>Eat-Da-Burger</h3>
@@ -27,7 +28,18 @@
             <input type="text" placeholder="Enter your burger order here!">
             </form>
             <br>
-            <button type="submit">Submit</button>
+            <button id="submit">Submit</button>
         </div>
+<script type="text/javascript">
+    
+    $("#submit").on("click", function(event){
+        event.preventDefault();
+        console.log("I've been submitted!");
+
+        $.post("/api/new").done(function(data){
+            console.log(data);
+        })
+    });
+</script>
     </body>
 </html>
