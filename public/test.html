@@ -25,7 +25,7 @@
         <h3>Eat-Da-Burger</h3>
         <div>
             <form>
-            <input type="text" placeholder="Enter your burger order here!">
+            <input type="text" placeholder="Enter your burger order here!" id="submission">
             </form>
             <br>
             <button id="submit">Submit</button>
@@ -34,9 +34,14 @@
     
     $("#submit").on("click", function(event){
         event.preventDefault();
+        var newSearch = $("#submission").val().trim();
+        console.log("Burger: ", newSearch);
+        var newBurger = {
+            name: newSearch
+        }
         console.log("I've been submitted!");
 
-        $.post("/api/new").done(function(data){
+        $.post("/api/new", newBurger).done(function(data){
             console.log(data);
         })
     });
