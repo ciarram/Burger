@@ -13,6 +13,11 @@ app.set("view engine", "handlebars");
 
  require("./routes/apiRoutes")(app);
  require("./routes/htmlRoutes")(app);
+//  var burgerName = [
+//     {
+//         name: "Veggie Burger"
+//     }
+// ]
 
 
 app.listen(PORT, function(){

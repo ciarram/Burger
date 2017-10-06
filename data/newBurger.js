@@ -4,5 +4,5 @@ var burgerName = [
     }
 ]
 
-//console.log(burgerName);
+console.log(burgerName);
 module.exports = burgerName;
