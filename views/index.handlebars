@@ -8,12 +8,9 @@
             margin-left: 375px;
             text-align: center;
             }
-        button{
+        #submit{
             margin-left: 375px;
             padding: 10px;
-        }
-        .body{
-            float: left;
         }
 </style>
 
@@ -21,7 +18,7 @@
 <div>
     <div class="body">
         {{#each burgers}}
-            <p> {{this.name}}</p>
+            <p>{{this.name}}</p>
         {{/each}}
     </div>
     <form>
@@ -31,7 +28,7 @@
         <button id="submit">Submit</button>
 </div>
 <script type="text/javascript">
-
+$(document).ready(function(){
     $("#submit").on("click", function(event){
         event.preventDefault();
         var newSearch = $("#submission").val().trim();
@@ -44,10 +41,18 @@
 
         $.post("/api/newBurgers", newBurger).done(function(data){
             //console.log(data);
-            $(".body").append(newSearch);
-            $(".body").append('<button class="devour">Devour It</button>')
+            $(".body").append('<p>' + newSearch + '</p>');
+            $(".body").append('<button class="eat">Devour It</button>')
         })
     });
+
+    $(".eat").click(function(){
+        console.log("clicked!");
+        $.post("/api/eatenBurgers").done(function(data){
+            console.log(data);
+        });
+    }); 
+});
 </script>
 
 
