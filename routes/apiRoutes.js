@@ -2,7 +2,7 @@ var burgerInfo = require("../data/newBurger");
 var express = require('express');
 var app = express();
 
-console.log(burgerInfo);
+//console.log(burgerInfo);
 
 
 module.exports = function(app) {
@@ -22,7 +22,7 @@ module.exports = function(app) {
         burgerInfo.push(req.body);
         res.render('index', {burgers: burgerInfo});
         console.log(burgerInfo);
-        console.log("i'm in post");
-        console.log(req.body);
+        //console.log("i'm in post");
+        //console.log(req.body);
         });
     };

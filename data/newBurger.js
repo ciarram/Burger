@@ -1,8 +1,8 @@
 var burgerName = [
     {
-        name: "Veggie Burger"
+        //name: "Veggie Burger"
     }
 ]
-var newBurgerEntry = [];
+//var newBurgerEntry = [];
 //console.log(burgerName);
 module.exports = burgerName;

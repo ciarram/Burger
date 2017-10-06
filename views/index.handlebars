@@ -12,14 +12,16 @@
             margin-left: 375px;
             padding: 10px;
         }
-
+        .body{
+            float: left;
+        }
 </style>
 
 <h3>Eat-Da-Burger</h3>
 <div>
     <div class="body">
         {{#each burgers}}
-            <p>Name: {{this.name}}</p>
+            <p> {{this.name}}</p>
         {{/each}}
     </div>
     <form>
@@ -29,7 +31,7 @@
         <button id="submit">Submit</button>
 </div>
 <script type="text/javascript">
-    
+
     $("#submit").on("click", function(event){
         event.preventDefault();
         var newSearch = $("#submission").val().trim();
@@ -42,6 +44,8 @@
 
         $.post("/api/newBurgers", newBurger).done(function(data){
             //console.log(data);
+            $(".body").append(newSearch);
+            $(".body").append('<button class="devour">Devour It</button>')
         })
     });
 </script>
