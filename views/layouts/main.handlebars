@@ -1,52 +1,11 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Burger List</title>
-    <style>
-        h3 {
-            text-align: center;
-        }
-        input {
-            height: 150px;
-            width: 250px;
-            margin-left: 375px;
-            text-align: center;
-            }
-        button{
-            margin-left: 375px;
-            padding: 10px;
-        }
-
-        </style>
-<script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <title>Burger List</title>   
+    <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script> 
 </head>
     <body>
-        <h3>Eat-Da-Burger</h3>
-        <div>
-        {{body}}
-            <form>
-            <input type="text" placeholder="Enter your burger order here!" id="submission">
-            </form>
-            <br>
-            <button id="submit">Submit</button>
-        </div>
-<script type="text/javascript">
-    
-    $("#submit").on("click", function(event){
-        //event.preventDefault();
-        var newSearch = $("#submission").val().trim();
-        console.log("Burger: ", newSearch);
-        var newBurger = {
-            name: newSearch
-        }
-        console.log("I've been submitted!");
-        $("#submission").val('');
-
-        $.post("/api/newBurgers", newBurger).done(function(data){
-            console.log(data);
-        })
-    });
-</script>
+        {{{body}}}   
     </body>
 </html>

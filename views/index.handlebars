@@ -1,7 +1,51 @@
-<div class="body">
-    {{#each burgers}}
-        <p>Name: {{this.name}}</p>
-    {{/each}}
+<style>
+        h3 {
+            text-align: center;
+        }
+        input {
+            height: 150px;
+            width: 250px;
+            margin-left: 375px;
+            text-align: center;
+            }
+        button{
+            margin-left: 375px;
+            padding: 10px;
+        }
+
+</style>
+
+<h3>Eat-Da-Burger</h3>
+<div>
+    <div class="body">
+        {{#each burgers}}
+            <p>Name: {{this.name}}</p>
+        {{/each}}
+    </div>
+    <form>
+        <input type="text" placeholder="Enter your burger order here!" id="submission">
+    </form>
+    <br>
+        <button id="submit">Submit</button>
 </div>
+<script type="text/javascript">
+    
+    $("#submit").on("click", function(event){
+        event.preventDefault();
+        var newSearch = $("#submission").val().trim();
+        console.log("Burger: ", newSearch);
+        var newBurger = {
+            name: newSearch
+        }
+        console.log("I've been submitted!");
+        $("#submission").val('');
+
+        $.post("/api/newBurgers", newBurger).done(function(data){
+            //console.log(data);
+        })
+    });
+</script>
+
+
 
 
