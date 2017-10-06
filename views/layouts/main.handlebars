@@ -34,7 +34,7 @@
 <script type="text/javascript">
     
     $("#submit").on("click", function(event){
-        event.preventDefault();
+        //event.preventDefault();
         var newSearch = $("#submission").val().trim();
         console.log("Burger: ", newSearch);
         var newBurger = {
@@ -43,7 +43,7 @@
         console.log("I've been submitted!");
         $("#submission").val('');
 
-        $.post("/api/new", newBurger).done(function(data){
+        $.post("/api/newBurgers", newBurger).done(function(data){
             console.log(data);
         })
     });

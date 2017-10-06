@@ -18,8 +18,8 @@ module.exports = function(app) {
         res.render('index', {burgers: burgerInfo});
         });
     
-    app.post("/api/new", function(req, res){
-        //burgerInfo.push(req.body);
+    app.post("/api/newBurgers", function(req, res){
+        burgerInfo.push(req.body);
         res.render('index', {burgers: burgerInfo});
         console.log(burgerInfo);
         console.log("i'm in post");
