@@ -27,7 +27,7 @@ module.exports = function(app) {
         //console.log(req.body);
         });
 
-    app.get("/api/eatenBurgers", function(req, res){
+    app.get("/", {
         res.render('index', {eat: ateBurger});
         console.log("I'm in get");
         });
